@@ -1,5 +1,6 @@
 var time;
 var freq;
+var name = "";
 var complete = {};
 var firebaseConfig = {
     apiKey: "AIzaSyBrpNTIk-OAiKUe4fqts3fEfbifUg9ontI",
@@ -16,8 +17,6 @@ var db = firebase.database();
 function trains() {
     var tFrequency = freq;
     var firstTime = time;
-
-    console.log(firstTime);
 
     // First Time (pushed back 1 year to make sure it comes before current time)
     var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
@@ -45,6 +44,7 @@ function trains() {
     console.log(next)
 
     db.ref().push({
+        name: name,
         start: firstTime,
         //convert: firstTimeConverted,
         dt: diffTime,
@@ -57,11 +57,11 @@ function trains() {
 $(document).on("click", "#addtrain", function () {
     time = $("#time").val().trim();
     freq = $("#freq").val().trim();
+    name = $("#name").val();
     trains();
 });
 
-db.ref().on("value", function (snappy) {
-    var shinkansen = snappy.val();
-    console.log("from db: ", shinkansen);
+db.ref().on("child_added", function (snappy) {
+    var i = snappy.val();
+    $(".loco").after("<div><div class='train'>" + i.name + "</div><div class='train'>" + i.start + "</div><div class='train'>" + i.until + "</div><div class='train'>" + i.next + "</div></div>")
 });
-

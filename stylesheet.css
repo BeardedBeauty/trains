@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+h3 {
+    width: 25%;
+    border-right: 1px solid lightcoral;
+    float: left;
+    height: 100%;
+    text-align: center;
+    padding-top: 10px;
+    background-color: silver;
+}
+
+.enter {
+    border: 1px solid lightgrey;
+    border-bottom: 3px solid lightgrey;
+    border-radius: 3px;
+    margin-top: 12px;
+    margin-bottom: 24px;
+    width: 960px;
+    float: left;
+    padding: 6px;
+    background-color: gainsboro;
+    background-image: linear-gradient(to bottom right, gainsboro, white);
+    box-shadow: 3px;
+    margin-left: -480px;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+}
+
+.trains {
+    border: 1px solid lightcoral;
+    border-bottom: 3px solid coral;
+    border-radius: 3px;
+    margin-top: 90px;
+    margin-bottom: 24px;
+    width: 960px;
+    float: left;
+    background-color: gainsboro;
+    /*background-image: linear-gradient(to  right, gainsboro, white);*/
+    box-shadow: 3px;
+    margin-left: -480px;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+}
+
+.loco {
+    width: 100%;
+    height: 42px;
+    border-bottom: 1px solid lightcoral;
+}
+
+.train {
+    width: 25%;
+    border-right: 1px solid lightcoral;
+    float: left;
+    height: 100%;
+    text-align: center;
+    padding-top: 10px;
+}
