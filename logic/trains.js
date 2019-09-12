@@ -21,7 +21,7 @@ function trains() {
     // First Time (pushed back 1 year to make sure it comes before current time)
     var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
     console.log(firstTimeConverted);
-
+    firstTime = moment(firstTimeConverted).format("hh:mm");
     // Current Time
     var currentTime = moment();
     console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
@@ -58,6 +58,7 @@ $(document).on("click", "#addtrain", function () {
     time = $("#time").val().trim();
     freq = $("#freq").val().trim();
     name = $("#name").val();
+    console.log(time)
     trains();
 });
 
